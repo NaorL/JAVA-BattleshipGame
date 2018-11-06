@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fx:id="scrollPane" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UI.Controller">
+   <content>
+      <BorderPane fx:id="borderPane">
+         <top>
+            <VBox alignment="CENTER" spacing="20">
+               <padding>
+                  <Insets left="10" right="10"/>
+               </padding>
+               <children>
+                  <Label fx:id="welcome" text="BattleShip Game">
+                     <font>
+                        <Font size="38.0" />
+                     </font>
+                  </Label>
+                  <HBox spacing="10" alignment="CENTER">
+                     <children>
+                        <Button fx:id="openFileButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#openFileButtonAction" prefWidth="150.0" text="Open File" />
+                        <Button fx:id="startButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#startButtonAction" prefWidth="150.0" text="Start" disable="true"/>
+                        <Button fx:id="finishButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#finishButtonAction" prefWidth="150.0" text="Finish game" disable="true"/>
+                        <Button fx:id="quitButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#quitButtonAction" prefWidth="150.0" text="Quit game" />
+                     </children>
+                  </HBox>
+                   <HBox spacing="20" alignment="CENTER">
+                       <VBox>
+                           <HBox spacing="20">
+                               <Label mnemonicParsing="false" text="Task Message" />
+                               <Label fx:id="taskMessageLabel"/>
+                           </HBox>
+                           <HBox spacing="20">
+                               <Label mnemonicParsing="false" text="Task Progress" />
+                               <StackPane>
+                                   <ProgressBar fx:id="taskProgressBar" prefWidth="500.0" progress="0.0"/>
+                                   <Label fx:id="progressPercentLabel" />
+                               </StackPane>
+                           </HBox>
+                       </VBox>
+                       <Button fx:id="defaultThemeButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#defaultThemeButtonAction" prefWidth="150.0" text="Default Theme" disable="true"/>
+                       <Button fx:id="theme1Button" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#Theme1ButtonAction" prefWidth="150.0" text="Theme 1"/>
+                       <Button fx:id="theme2Button" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#Theme2ButtonAction" prefWidth="150.0" text="Theme 2"/>
+                   </HBox>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <HBox spacing="30" alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="25.0" top="50.0"/>
+               </BorderPane.margin>
+               <children>
+                  <VBox>
+                     <children>
+                        <Label fx:id="battleshipBoardLabel" text="BattleShip Board" visible="false"/>
+                        <GridPane fx:id="battleshipGridPane" alignment="TOP_LEFT" hgap="1" vgap="2"/>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label fx:id="trackingBoardLabel" text="Tracking Board" visible="false"/>
+                        <GridPane fx:id="trackingGridPane" alignment="TOP_LEFT" hgap="1" vgap="2"/>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </center>
+         <left>
+             <VBox fx:id="playerInfoVBox">
+                 <BorderPane.margin>
+                     <Insets bottom="25.0" top="50.0" left="10" right="10"/>
+                 </BorderPane.margin>
+                 <HBox spacing="10">
+                     <Label fx:id="playerLabel" text="Player:" visible="false"/>
+                     <Label fx:id="playerValueLabel" text="Alon" visible="false"/>
+                 </HBox>
+                 <HBox spacing="10">
+                     <Label fx:id="scoreLabel" text="Score:" visible="false"/>
+                     <Label fx:id="scoreValueLabel" text="10" visible="false"/>
+                 </HBox>
+                 <HBox spacing="10">
+                     <Label fx:id="hitLabel" text="Hit:" visible="false"/>
+                     <Label fx:id="hitValueLabel" text="5" visible="false"/>
+                 </HBox>
+                 <HBox spacing="10">
+                     <Label fx:id="missLabel" text="Miss:" visible="false"/>
+                     <Label fx:id="missValueLabel" text="6" visible="false"/>
+                 </HBox>
+                 <HBox spacing="10">
+                     <Label fx:id="averageTurnLabel" text="Average Move Time:" visible="false"/>
+                     <Label fx:id="averageTurnValueLabel" text="00:34" visible="false"/>
+                 </HBox>
+                 <HBox spacing="10">
+                     <Label fx:id="numOfTurnsLabel" text="Number Of Turns:" visible="false"/>
+                     <Label fx:id="numOfTurnsValueLabel" text="20" visible="false"/>
+                 </HBox>
+             </VBox>
+         </left>
+         <right>
+             <VBox fx:id="enemyInfoVBox" spacing="10">
+                 <BorderPane.margin>
+                     <Insets bottom="25.0" top="50.0" left="10" right="10"/>
+                 </BorderPane.margin>
+                 <padding>
+                     <Insets left="10" right="10"/>
+                 </padding>
+                 <Label fx:id="enemyInfoLabel" text="Enemy Information:" visible="false"/>
+             </VBox>
+         </right>
+          <bottom>
+              <HBox spacing="10" alignment="CENTER">
+                  <Button fx:id="forwardButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#forwardButtonAction" prefWidth="150.0" text="Forward" disable="true"/>
+                  <Button fx:id="backwardButton" maxWidth="150.0" minWidth="150.0" mnemonicParsing="false" onAction="#backwardButtonAction" prefWidth="150.0" text="Backward" disable="true"/>
+              </HBox>
+          </bottom>
+      </BorderPane>
+   </content>
+</ScrollPane>

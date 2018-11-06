@@ -1,0 +1,34 @@
+#welcome {
+    -fx-font-size: 50px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Onyx";
+    -fx-font-style: normal;
+    -fx-fill: #818181;
+    -fx-effect: innershadow( three-pass-box , rgba(0,0,0,0.7) , 6, 0.0 , 0 , 2 );
+}
+
+.scroll-pane {
+    -fx-background: rgb(80,80,120);
+}
+
+.button {
+    -fx-text-fill: black;
+    -fx-font-family: "Arial Narrow";
+    -fx-font-weight: bold;
+    -fx-background-color: antiquewhite;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#2A5058, #61a2b1);
+}
+
+.label{
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Yu Gothic";
+}
+
+#progressPercentLabel{
+    -fx-text-fill: black;
+}
