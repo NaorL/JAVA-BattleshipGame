@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Loby</title>
+    <script type="text/javascript" src="../../jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../../jquery.form.js"></script>
+    <script src="loby.js"></script>
+    <link rel="stylesheet" href="../../common/bootstrap.min.css">
+    <link rel="stylesheet" href="loby.css">
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-1">
+            <div class="sidebar">
+                <h3>Online</h3>
+                <div class="clearfix">
+                    <div class="input">
+                        <ul id="userslist"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-8">
+            <div class="content">
+                <div id="gameswindow">
+                    <h3>Games</h3>
+                    <table style="align-content: center" id="gamestable" width="80%"></table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-2">
+            <div class="content">
+                <div id="gameupload">
+                    <br><br>
+                    <form id="upload-form" method="POST" action="/upload" enctype="multipart/form-data">
+                            <input type="file" id="fileInput" name="fileInput" style="display:none;" />
+                            <label>Choose game name:</label>
+                            <input type="text" name="gameName"/>
+                            <br><br>
+                            <input class="btn btn-info" type="button" value="Choose File!" id="choose-file-btn" onclick="document.getElementById('fileInput').click()"/>
+                            <input class="btn btn-info" type="submit" value="Upload!" id="uploadBtn"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1">
+            <div class="button">
+                <!--
+                Here we could give chat/logout, and the executed request was relative to this page url (=== <context path>/pages/chatroom/),
+                in this option it would have come out eventually with '<context path>/pages/chatroom/chat/logout'
+                (note that this option is the one used with the form above for the action of 'sendChat'...)
+
+                Another option, just to prove that the browser takes everything relative to the current page (<context path>/pages/chatroom/),
+                is to use relative path here.
+                So '../../chat/logout' steps backward 2 levels from current page (putting it in the root web app, right after the context path: '/<context path>/')
+                and from there assembles the rest, so we end up with <context path>/chat/logout.
+                (when this request will arrive to tomcat it will strip down the context path and will expect to find a registered servlet with the mapping of /chat/logout)
+                -->
+                <a class="btn btn-danger" href="../../logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

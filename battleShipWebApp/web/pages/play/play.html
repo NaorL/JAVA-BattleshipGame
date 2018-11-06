@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play</title>
+
+    <script type="text/javascript" src="../../jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="../../jquery.form.js"></script>
+    <link rel="stylesheet" href="play.css">
+    <script src="play.js"></script>
+
+    <!-- google's fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- Header CSS -->
+    <script src="../../common/jquery-3.2.1.min.js"></script>
+    <script src="../../common/context-path-helper.js"></script>
+    <script src="../../common/bootstrap.min.js"></script>
+    <script src="../../common/bootstrap-dialog.min.js"></script>
+</head>
+<body>
+
+<!-- screen we display while there are not enough players -->
+<div id="waitingDiv" class="overlay">
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <h1 class="main-header">waiting for other players to join... </h1>
+        <p class="lead" id="playersCount"></p>
+        <button class="btn btn-primary" onclick="returnToLobyWhileInWaitingDiv()">Click here to return to the loby</button>
+    </div>
+</div>
+
+
+<!-- GAME SCREEN -->
+<div id="game-screen">
+    <div class="headers">
+        <h1 class="main-header">Battleship Game</h1>
+        <h3 id="current-player"></h3>
+        <button type="button" class="btn btn-danger" id="quit-button" onclick="quitGame()">Quit</button>
+    </div>
+    <div class="game-body">
+        <div class="player-info">
+            <h5 class="div-header"></h5>
+            <h6 id="player-name"></h6>
+            <h6 id="player-score"></h6>
+            <h6 id="player-hit"></h6>
+            <h6 id="player-miss"></h6>
+            <h6 id="player-avg-time"></h6>
+            <h6 id="player-num-of-turns"></h6>
+        </div>
+        <div class="boards">
+            <table id="battleship-board"></table>
+            <table id="tracking-board"></table>
+        </div>
+        <div class="enemy-info">
+            <table id="enemy-information">
+                <tr><td></td><td><h6 id="statistics-player1"></h6></td><td><h6 id="statistics-player2"></h6></td></tr>
+                <tr><td></td><h6 id="statistics-score"></h6></tr>
+                <tr><td></td><h6 id="statistics-hit"></h6></tr>
+                <tr><td></td><h6 id="statistics-miss"></h6></tr>
+                <tr><td></td><h6 id="statistics-avg-time"></h6></tr>
+                <tr><td></td><h6 id="statistics-num-of-turns"></h6></tr>
+            </table>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1">
+                <div class="sidebar">
+                    <h4>Online</h4>
+                    <div class="clearfix">
+                        <div class="input">
+                            <ul id="userslist"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="chatcontent">
+                    <div id="chatwindow">
+                        <h4>Chat</h4>
+                        <div id="chatarea" class="span6"></div>
+                        <form id="chatform" method="POST" action="/sendChat">
+                            <input type="text" id="userstring" name="userstring"/>
+                            <input type="submit" value="Send"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="statistics-screen">
+    <div class="content">
+        <table id="statistics-table"></table>
+        <h5 id="winner-name"></h5>
+        <button id="back-to-loby-button" class="btn btn-primary" onclick="returnToLobyAfterGameFinished()">Click here to return to the loby</button>
+    </div>
+</div>
+
+
+</body>
+</html>

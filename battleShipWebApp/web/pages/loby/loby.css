@@ -1,0 +1,47 @@
+body {
+    background-image: url("/../../common/images/battleShipPic.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*set battleship board buttons size*/
+table#gamestable th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+    font-size: 14px;
+    color:lightpink        ;
+
+}
+
+/*set battleship board buttons size*/
+table#gamestable td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+    font-size: 13px;
+    font-weight:bold;
+    color:lavender ;
+
+}
+
+/*set logout button*/
+.logout{
+    font-size: large;
+    color: red;
+}
+
+/*--- Set titles ---*/
+#gameswindow h3 {
+    color:yellowgreen
+}
+.sidebar h3{
+    color:yellowgreen;
+}
+#userslist{
+    font-size: 16px;
+    color: lightpink;
+}
+#upload-form label{
+    color:yellowgreen;
+}

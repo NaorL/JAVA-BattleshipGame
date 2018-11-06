@@ -1,0 +1,209 @@
+#game-screen{
+    background-color: yellowgreen;
+}
+
+.headers {
+    text-align: center;
+}
+
+.main-header{
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 59px;
+    line-height: 60px;
+}
+
+.game-body{
+    display: flex;
+}
+
+.player-info{
+    align-self:left;
+    margin-right:auto;
+    margin-left:20px;
+}
+
+.enemy-info{
+    align-self:right;
+    margin-left:auto;
+    margin-right:20px;
+}
+
+.boards {
+    margin-right:20px;
+    align-self:center;
+    display: flex;
+    overflow: auto;
+}
+
+#battleship-board{
+    margin-left: 20px;
+}
+
+#tracking-board{
+    margin-left: 20px;
+}
+
+.battleship-button{
+    width: 100%;
+    height: 100%;
+}
+
+.battleship{
+    background-color: #1f8c22;
+}
+
+.mine {
+    background-color: #ff1adc;
+}
+
+.attacked {
+    background-color: red;
+}
+
+.tracking-button{
+    width: 100%;
+    height: 100%;
+}
+
+.enemy-info-button{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+/*header for evert section in game screen*/
+.div-header{
+    font: italic small-caps bold 16px/2 cursive;
+}
+
+/*set blank row*/
+.blank_row{
+    height: 10px !important; /* overwrites any other rules */
+}
+
+/*set tracking board buttons size*/
+table#tracking-board td{
+    width: 30px;
+    height: 30px;
+}
+
+/*set battleship board buttons size*/
+table#battleship-board td{
+    width: 30px;
+    height: 30px;
+}
+
+/*set enemy information (right side of the screen) table buttons size*/
+.enemy-info-td{
+    width: 30px;
+    height: 30px;
+}
+
+.player-info H6 {
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 17px;
+}
+
+table#mine-table td {
+    width: 30px;
+    height: 30px;
+}
+
+.mine-button{
+    width: 100%;
+    height: 100%;
+    background-color: #ff1adc;
+}
+
+table#statistics-table td {
+    padding: 10px 10px 10px 10px;
+}
+
+.chat{
+    overflow: auto;
+    height: 25%;
+}
+
+/* Witing div design */
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 100%;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+#waitingDiv {
+    padding-top: 50px;
+    color: lightblue;
+}
+
+/*Statistics Screen*/
+#statistics-screen{
+    background-image: url(../../common/images/gameOverPic.jpg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.content{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#statistics-table td{
+    color:white;
+    width:43%;
+    text-align: center;
+    vertical-align: middle;
+    padding: 2px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 30px;
+}
+
+#winner-name{
+    color:DarkCyan;
+    text-align:left;
+    padding: 2px;
+    font-family: 'Dancing Script', Georgia, Times, serif;
+    font-size: 60px;
+    text-shadow: 0 0 10px rgba(255,255,255,1) , 0 0 20px rgba(255,255,255,1) , 0 0 30px rgba(255,255,255,1) , 0 0 40px #00ffff , 0 0 70px #00ffff , 0 0 80px #00ffff , 0 0 100px #00ffff ;
+}
+
+#neon-label{
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    border: none;
+    font: normal normal bold 72px/normal "Atomic Age", Helvetica, sans-serif;
+    color: rgb(64, 126, 196);
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    text-shadow: 1px 1px 0 rgb(77,162,252) , -1px -1px 0 rgb(77,162,252) , 1px -1px 0 rgb(77,162,252) , -1px 1px 0 rgb(77,162,252) , 4px 4px 8px rgb(44,88,137) , -4px 4px 8px rgb(44,88,137) , 4px -4px 8px rgb(44,88,137) , -4px -4px 8px rgb(44,88,137) ;
+    -webkit-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -moz-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    -o-transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+    transition: all 500ms cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+
+
